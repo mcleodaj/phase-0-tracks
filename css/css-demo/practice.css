@@ -1,0 +1,21 @@
+#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+li:hover {
+  color: orange;
+}
+
+.smallfont {
+  font-size: .8em;
+}
+
+section > h3 {
+  color: blue;
+}
