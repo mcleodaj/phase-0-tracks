@@ -9,7 +9,11 @@ puts ("Is this a good hamster to adopt?")
 adoption = gets.chomp
 puts ("Approx. how old is your hamster?")
 age = gets.chomp
-age.to_f
+if age.empty?
+  age=nil
+else
+  age.to_f
+end
 
 puts ("Your hamster's name is #{name}")
 puts ("Your hamster's age is #{age}")
