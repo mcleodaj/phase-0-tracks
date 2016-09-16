@@ -1,0 +1,28 @@
+-Check if on correct floor
+  -If not on correct Floor
+    -Check if button pressed
+      -If button pressed is for desired floor do nothing
+      -If button pressed is not for desired floor
+        -Find button for desired floor and press
+      -If button is not pressed
+        -Find button for desired floor and press
+  -If on correct Floor
+    -Exit Elevator
+
+Preparing to brush teeth:
+-Check if teeth have been brushed
+  -If brushed: end
+  -If not Brushed
+    -Check if toothbrush present
+      -If toothbrush not present
+        -Find toothbrush and return to check for toothbrush
+      -If toothbrush present
+        -Check if toothbrush is wet
+          -If not wet
+            -Wet toothbrush and return to check if wet
+          -If wet
+            -Check if toothbrush has toothpaste
+              -If toothpaste isn't present
+                -add toothpaste and return to check for toothpaste
+              -If toothpaste present
+                -commence brushing
