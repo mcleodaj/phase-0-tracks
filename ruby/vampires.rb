@@ -28,10 +28,10 @@ end
 
 yearDiff=2016-age
 correctYear=(yearDiff==year)
-puts (correctYear && (food || insurance))
-# if (correctYear && (food || insurance))==true
+
+# if correctYear && (food || insurance))==true
   # puts "Probably not a vampire"
-# elsif !((correctYear && food) || insurance)==false
+# elsif correctYear==false && (food==false || insurance==false)
   # puts "Probably a vampire"
 # elsif !(correctYear && food && insurance)==false
   # puts "Almost certainly a vampire"
