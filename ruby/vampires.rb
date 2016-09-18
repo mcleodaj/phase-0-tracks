@@ -29,14 +29,14 @@ end
 yearDiff=2016-age
 correctYear=(yearDiff==year)
 
-# if correctYear && (food || insurance))==true
-  # puts "Probably not a vampire"
-# elsif correctYear==false && (food==false || insurance==false)
-  # puts "Probably a vampire"
-# elsif !(correctYear && food && insurance)==false
-  # puts "Almost certainly a vampire"
-# elsif (name=="Drake Cula" || name=="Tu Fang")==true
-  # puts "Definitely a vampire"
-# else
-  # puts "Results inconclusive"
-# end
+if correctYear && (food || insurance))==true
+  puts "Probably not a vampire"
+elsif correctYear==false && (food==false || insurance==false)
+  puts "Probably a vampire"
+elsif correctYear==false && food==false && insurance==false
+  puts "Almost certainly a vampire"
+elsif name=="Drake Cula" || name=="Tu Fang"
+  puts "Definitely a vampire"
+else
+  puts "Results inconclusive"
+end
