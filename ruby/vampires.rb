@@ -41,24 +41,22 @@ while (amount > 0)
     end
   end
 
-  if insurance==false && food==false
-    bothCheck=true
-  else
-    bothCheck=false
-  end
-
   yearDiff=2016-age
   correctYear=(yearDiff==year)
   if result==""
     if correctYear==true && (food || insurance)==true
       result="Probably not a vampire"
-    elsif correctYear==false && (food==false || insurance==false) && bothCheck==false
+    end
+    if correctYear==false && (food==false || insurance==false)
       result="Probably a vampire"
-    elsif correctYear==false && food==false && insurance==false
+    end
+    if correctYear==false && food==false && insurance==false
       result="Almost certainly a vampire"
-    elsif name=="Drake Cula" || name=="Tu Fang"
+    end
+    if name=="Drake Cula" || name=="Tu Fang"
       result="Definitely a vampire"
-    else
+    end
+    if result==""
       result="Results inconclusive"
     end
   end
