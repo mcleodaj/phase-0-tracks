@@ -1,42 +1,69 @@
-puts "What is your name?"
-name=gets.chomp 
-puts "How old are you?"
-age=gets.chomp.to_i
-puts "What year were you born?"
-year=gets.chomp.to_i
-puts "Our company cafeteria serves garlic bread. Should we order some for you? (yes/no)"
-food=gets.chomp
-puts "Would you like to enroll in the company's health insurance? (yes/no)"
-insurance=gets.chomp
-
-if food=="yes"
-  food=true
-elsif food=="no"
-  food=false
-else
-  food=nil
+def foodMethod (food)
+  if food=="yes"
+    return true
+  elsif food=="no"
+    return false
+  end
 end
 
-if insurance=="yes"
-  insurance=true
-elsif insurance=="no"
-  insurance=false
-else
-  insurance=nil
+def insuranceMethod(insurance)
+  if insurance=="yes"
+    return true
+  elsif insurance=="no"
+    return false
+  end
 end
 
+puts "How many employees would you like to process?"
+amount=gets.chomp.to_i
+result=""
 
-yearDiff=2016-age
-correctYear=(yearDiff==year)
+while (amount > 0)
+  puts "What is your name?"
+  name=gets.chomp 
+  puts "How old are you?"
+  age=gets.chomp.to_i
+  puts "What year were you born?"
+  year=gets.chomp.to_i
+  puts "Our company cafeteria serves garlic bread. Should we order some for you? (yes/no)"
+  food=gets.chomp
+  food=foodMethod(food)
+  puts "Would you like to enroll in the company's health insurance? (yes/no)"
+  insurance=gets.chomp
+  insurance=insuranceMethod(insurance)
+  answer=""
+  puts "Do you have any allergies? (type 1 at a time until finished, type 'done' when finished or if no allergies)"
+  while answer!="done"
+    answer=gets.chomp
+    if answer=="sunshine"
+      result="Probably a vampire"
+      break
+    end
+  end
 
-if correctYear && (food || insurance))==true
-  puts "Probably not a vampire"
-elsif correctYear==false && (food==false || insurance==false)
-  puts "Probably a vampire"
-elsif correctYear==false && food==false && insurance==false
-  puts "Almost certainly a vampire"
-elsif name=="Drake Cula" || name=="Tu Fang"
-  puts "Definitely a vampire"
-else
-  puts "Results inconclusive"
+  if insurance==false && food==false
+    bothCheck=true
+  else
+    bothCheck=false
+  end
+
+  yearDiff=2016-age
+  correctYear=(yearDiff==year)
+  if result==""
+    if correctYear==true && (food || insurance)==true
+      result="Probably not a vampire"
+    elsif correctYear==false && (food==false || insurance==false) && bothCheck==false
+      result="Probably a vampire"
+    elsif correctYear==false && food==false && insurance==false
+      result="Almost certainly a vampire"
+    elsif name=="Drake Cula" || name=="Tu Fang"
+      result="Definitely a vampire"
+    else
+      result="Results inconclusive"
+    end
+  end
+  puts result
+  puts ""
+  result=""
+  amount=amount-1
 end
