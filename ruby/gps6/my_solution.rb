@@ -6,24 +6,29 @@
 # EXPLANATION OF require_relative
 #
 #
+
+#States that the code requires the 'state_data' file to be present in the directory to work
 require_relative 'state_data'
 
 class VirusPredictor
 
+  #Initializes our class using 3 arguments, and create instanced variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  #Calling the two class methods to obtain the data we want using our instanced variables
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths()
+    speed_of_spread()
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  #Runs an operator based on a set of conditions based on passed in arguments, and prints the string while returning nil
+  def predicted_deaths()
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +46,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  #Runs a set of conditional statements based on population density, and prints statement at the end
+  def speed_of_spread() #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -82,6 +88,16 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+STATE_DATA.each_key do |i|
+ states = VirusPredictor.new(i,STATE_DATA[i][:population_density],STATE_DATA[i][:population])
+ states.virus_effects
+end
+
 
 #=======================================================================
 # Reflection Section
+# The usage of symbols in the nested hash keeps the relative number of variables much lower than the style used in the first hash
+# Require relative requires a path relative to the directory of the file being worked with, and is generally used for code *you* know or wrote, where as require is an absolute path and is used in situations such as software distribution where the code may access a ruby library using an absolute path
+# .each_key, for loops are both ways to iterate through a hash
+# Our methods already utilized instanced variables and had no need for arguments
+# I solidified my work with hash iteration really well with this challenge
