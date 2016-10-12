@@ -1,0 +1,15 @@
+2. SELECT * FROM reviews, users, businesses WHERE reviews.business_id=businesses.id AND reviews.user_id=users.id;
+
+1           4           Fantastic Soup  1            1           1           Bradford    Pitt        1           Grundy Hollow Wedding Chapel
+2           3           Average Sandwh  2            1           1           Bradford    Pitt        2           Amir's Towing
+3           5           Best Food Ever  3            2           2           Mandy       Kaling      3           The Beagle Nightclub
+
+3. SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM users JOIN reviews on users.id = reviews.user_id JOIN businesses on businesses.id = reviews.business_id;
+
+4|Fantastic Soup|Grundy Hollow Wedding Chapel|Bradford|Pitt
+3|Average Sandwhich|Amir's Towing|Bradford|Pitt
+5|Best Food Ever!|The Beagle Nightclub|Mandy|Kaling
+
+4. SELECT * FROM reviews, users, businesses WHERE reviews.business_id=businesses.id AND reviews.user_id=users.id AND businesses.name="Amir's Towing";
+
+2           3           Average Sandwhich  2            1           1           Bradford    Pitt        2           Amir's Towing
