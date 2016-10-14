@@ -1,0 +1,37 @@
+1. SELECT * FROM exercises
+
+1|Pushup|20|3|no|3
+2|Pullup|10|3|no|4
+3|Squat|15|5|no|2
+4|Curl|8|3|no|1
+5|Handstand Pushup|4|2|yes|1
+6|Leg Raise|12|3|no|5
+7|Calf Raise|20|4|no|2
+8|L-Sit|5|2|yes|5
+
+2. UPDATE exercises SET intense="yes" WHERE exercises="Pullup";
+
+3. SELECT * FROM exercises, groups WHERE exercises.muscle_group=groups.id;
+
+1|Pushup|20|3|no|3|3|Chest
+2|Pullup|10|3|yes|4|4|Back
+3|Squat|15|5|no|2|2|Legs
+4|Curl|8|3|no|1|1|Arms
+5|Handstand Pushup|4|2|yes|1|1|Arms
+6|Leg Raise|12|3|no|5|5|Core
+7|Calf Raise|20|4|no|2|2|Legs
+8|L-Sit|5|2|yes|5|5|Core
+
+4. SELECT exercises.exercises, exercises.reps, exercises.sets, groups.muscle_groups FROM groups JOIN exercises on groups.id = exercises.muscle_group;
+
+Pushup|20|3|Chest
+Pullup|10|3|Back
+Squat|15|5|Legs
+Curl|8|3|Arms
+Handstand Pushup|4|2|Arms
+Leg Raise|12|3|Core
+Calf Raise|20|4|Legs
+L-Sit|5|2|Core
+
+5. DELETE FROM exercises WHERE id=8;
+
