@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <title>Exercises to Assist With Rock Climbing</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $( document ).ready(function() {
+    console.log( "ready!" );
+    $("#sitewrapper").hide();
+    $( "#button" ).click(function() {
+      console.log( "You clicked the button!" );
+      $("#button").fadeOut('slow', function() {
+        $("#button").hide();
+        $("#wallpaper").fadeOut('slow', function() {
+          $("#sitewrapper").fadeIn('slow');
+          $("#wallpaper").hide();
+        });
+      });
+
+      
+    });
+  });
+  </script>
+</head>
+<body>
+<div id="wallpaper"><img src="wallpaper.png"></img></div>
+<div id="button"><img src="button-transparent.png" BackColor="Transparent" /></div>
+<div id="sitewrapper">
+<section class="divider">
+  <h1> An Introduction:</h1>
+  <p>For those of you who are just being introduced to the sport of rock climbing, it may seem like a daunting sport, requiring endurance, strength and balance.  And you'd be correct!  It is not a particularly easy sport to take on, but you can accelerate your progress by adding on a few of these supplementary exercises to your routine!</p>
+</section>
+<section class="divider">
+  <h2>1. Pull-ups</h2>
+  <p>The bread and butter of all climbing exercises, the pull-up is going to work on bringing you up to speed as quickly as possible on the upper body strength.  If you cannot do a full pull-up, do not stress!  Practice negative pull-ups, where you jump up into the top of the pull-up, and try to slow your descent back to hanging as much as possible.  This is proper pull-up form: </p>
+  <img src="pullup.jpg" alt="A man showing proper pullup form">
+  <blockquote>To maximize your pullups, keep the elbows close to the body, the shoulders and backs set, and use the full range of motion!</blockquote>
+</section>
+<section class="divider">
+  <h2>2. Leg Raises</h2>
+  <p>Leg raises are performed by hanging from a bar, and bringing your knees your chest while attempting to keep the upper body as still as possible.  This develops strength for bringing the feet into a better position while hanging on the wall.  If just bringing up the legs with the knees bent becomes easy, try brining the legs up while keeping them completely straight!</p>
+</section>
+<section class="divider">
+  <h2>3. Hangs</h2>
+  <p>Hangs are the simple act of jumping on to the nearest pull-up bar/tree branch/door arch and the act of just hanging on it for as long as you can.  This is meant to help improve endurance in tricky positions while climbing, though if you begin feeling any sharp shoulder/wrist/arm pain make sure to stop!</p>
+</section>
+<section class="divider">
+  <h2>An Example Routine:</h2>
+  <table>
+  <tr>
+    <th>Exercise</th>
+    <th>Set 1</th>
+    <th>Set 2</th>
+  </tr>
+  <tr>
+    <td>Pullups</td>
+    <td>10 Reps</td>
+    <td>8 Reps</td>
+  </tr>
+  <tr>
+    <td>Leg Raises</td>
+    <td>10 Reps</td>
+    <td>10 Reps</td>
+  </tr>
+  <tr>
+    <td>Hangs</td>
+    <td>Until initial discomfort</td>
+    <td>Until Exhaustion</td>
+  </tr>
+  </table>
+  <div id="textcentered">
+    <p>Other key elements for improving any workout include:</p>
+  </div>
+  <ul>
+    <li>Staying Hydrated</li>
+    <li>Warming Up</li>
+    <li>Stretching</li>
+    <li>Proper Sleep Schedules</li>
+    <li>Proper Diet</li>
+  </ul>
+  <p>To read more about climbing exercises check out <strong><a href="http://www.climbing.com/skills/training-10-exercises-for-a-complete-core/">this fantastic site.</a></strong> They have a fantastic variety of exercise in a easy to read scrolling format with minimal clutter and well segmented sections!</p> 
+</section>
+<div id="footer">
+  <p><a href="email.html">Sign Up for Our E-mail's Here!</a></p>
+</div>
+</div>
+</body>
+</html>
