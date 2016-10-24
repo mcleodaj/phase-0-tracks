@@ -6,4 +6,3 @@
 
 2.  A GET request includes all required data, a POST request supplies additional data from the client
 
-3.  

@@ -1,0 +1,3 @@
+1. The Linux design philosophy is that the user has an understanding of what they are doing, and so it allows a freedom that can be beneficial to those who do know what they are doing, and potentially harmful to those who don't. 
+
+2. A VPS is essentially partitioning your hard drive to allow another operating system to be installed on said partition.  A common example of this is Mac users setting up a Windows partition, and Windows users setting up a Mac partition so that they have access to both operating systems (esp. if they are designing software for both)
