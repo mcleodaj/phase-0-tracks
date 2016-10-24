@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require "sinatra/reloader"
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
@@ -21,6 +22,26 @@ end
 
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
+end
+
+get '/contact' do
+  "Our office can be found at 211 Paradise Place, Atlantis, Atlantic Ocean"
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+get '/:num_1/add/:num_2' do
+  num_1=params[:num_1].to_i
+  num_2=params[:num_2].to_i
+  answer=num_1+num_2
+  "#{num_1} + #{num_2} = #{answer}"
 end
 
 # write a GET route that retrieves
